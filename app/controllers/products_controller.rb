@@ -1,11 +1,11 @@
 class ProductsController < ApplicationController
 
   def index
-    cart
+    cart                       #just use helper method. Do not set up instance variable
   end
 
   def add
-    cart << params[:product]
+    cart << params[:product]          #same as above. Last test fails if instance variable is used
     #binding.pry
     render :index
   end
